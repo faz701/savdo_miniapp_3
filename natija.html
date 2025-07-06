@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Natija</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 40px; background: #f9f9f9; }
+    h1 { color: #27ae60; }
+    p { font-size: 18px; }
+    .feedback { margin-top: 30px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body>
+  <h1>Test natijasi</h1>
+  <p id="ball"></p>
+
+  <div class="feedback">
+    <h3>Fikr-mulohaza:</h3>
+    <ul>
+      <li>Agar siz 1-savolda xato qilgan bo‘lsangiz: <em>Tayyorgarlik bosqichi — bu tashrifdan oldin mijoz haqida ma’lumot to‘plashdir.</em></li>
+      <li>2-savolda xato bo‘lsa: <em>Kirishda o‘zingizni tanishtirish muhim.</em></li>
+      <li>4-savolda xato bo‘lsa: <em>Ehtiyojni aniqlash — bu savollar berish orqali amalga oshadi.</em></li>
+      <li>6-savolda xato bo‘lsa: <em>Taqdimotda mahsulot foydasi mijoz ehtiyojiga mos bo‘lishi kerak.</em></li>
+      <li>7-savolda xato bo‘lsa: <em>Yakunlashda aniq savol bilan buyurtmani rasmiylashtirish kerak.</em></li>
+    </ul>
+  </div>
+
+  <script>
+    let ball = localStorage.getItem("ball") || 0;
+    document.getElementById("
