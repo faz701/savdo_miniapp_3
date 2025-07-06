@@ -16,7 +16,7 @@ const quiz = [
     question: "Quyidagi iboralardan qaysi biri kirish bosqichida ishlatiladi?",
     answers: [
       { text: "“Sizga qancha kerak?”", score: 0 },
-      { text: "“Assalomu alaykum, men Fozilbekman, ‘TexnoServis’ kompaniyasidan.”", score: 10 },
+      { text: "“Assalomu alaykum, men Fozilbekman, ‘EPA’ kompaniyasidan.”", score: 10 },
       { text: "“Buyurtmani rasmiylashtiraylikmi?”", score: 0 },
       { text: "“Bu nasos 370 Vt quvvatga ega.”", score: 0 }
     ],
