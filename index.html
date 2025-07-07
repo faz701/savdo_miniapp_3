@@ -3,10 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>Savdo nuqtasiga tashrif buyurish qadamlari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; background: #f4f4f4; }
-    h1 { color: #2c3e50; font-size: 28px; }
+    :root {
+      --vh: 1vh;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: calc(var(--vh, 1vh) * 100);
+      font-family: sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 20px 20px;
+    }
+
+    img {
+      width: 250px;
+      height: auto;
+    }
+
     button {
       margin-top: 30px;
       padding: 14px 28px;
@@ -17,13 +48,31 @@
       border-radius: 6px;
       cursor: pointer;
     }
-    button:hover { background-color: #219150; }
+
+    button:hover {
+      background-color: #219150;
+    }
   </style>
 </head>
 <body>
   <h1>Savdo nuqtasiga tashrif buyurish qadamlari</h1>
   <p>7 bosqichli o‘quv moduli orqali savdo jarayonini mukammal o‘rganing.</p>
-  <img src="svs1.png" alt="Savdo nuqtasiga tashrif buyurish qadamlari rasmi" width="250" height="auto">
+  <img src="svs1.png" alt="Savdo nuqtasiga tashrif buyurish qadamlari rasmi">
   <button onclick="window.location.href='bosqich1.html'">Boshlash</button>
+
+  <script>
+    // Устанавливаем переменную --vh для корректной высоты на iOS
+    function setVh() {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    }
+
+    window.addEventListener('resize', setVh);
+    window.addEventListener('load', () => {
+      setVh();
+      if (window.Telegram && Telegram.WebApp) {
+        Telegram.WebApp.expand(); // Разворачиваем WebView на весь экран
+      }
+    });
+  </script>
 </body>
 </html>
