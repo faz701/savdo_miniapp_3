@@ -3,12 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <title>7-bosqich: Monitoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <style>
-    body { font-family: sans-serif; padding: 30px; background: #fff; color: #333; }
-    h1 { color: #2c3e50; }
-    ul { margin-left: 20px; }
+    :root {
+      --vh: 1vh;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: calc(var(--vh, 1vh) * 100);
+      font-family: sans-serif;
+      background: #fff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 30px 5%;
+      box-sizing: border-box;
+      max-width: 700px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    img {
+      width: 200px;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    p {
+      margin: 10px 0;
+      text-align: left;
+      width: 100%;
+    }
+
+    ul {
+      margin: 10px 0 20px 20px;
+      padding-left: 20px;
+      text-align: left;
+      width: 100%;
+    }
+
     .btn {
-      margin-top: 30px;
+      margin-top: auto;
       padding: 12px 24px;
       background-color: #2980b9;
       color: white;
@@ -17,20 +70,39 @@
       font-size: 16px;
       cursor: pointer;
     }
-    .btn:hover { background-color: #2471a3; }
+
+    .btn:hover {
+      background-color: #2471a3;
+    }
   </style>
 </head>
 <body>
-  <h1>7-bosqich: Tashrifdan keyingi monitoring</h1>
-  <img src="sv7.png" alt="Tashrifdan keyingi monitoring bosqichi rasmi" width="200" height="auto">
-  <p><strong>Nima qilish kerak:</strong> Tashrifdan so‘ng mijoz bilan aloqani davom ettirish, fikrini so‘rash.</p>
-  <p><strong>Amaliy misollar:</strong></p>
-  <ul>
-    <li>“Assalomu alaykum, nasos siz kutganidek ishlayaptimi?”</li>
-    <li>“Yordam kerak bo‘lsa, bemalol murojaat qiling.”</li>
-    <li>“Mahsulot haqida fikringiz qanday?”</li>
-  </ul>
-  <p><strong>Nega bu muhim:</strong> Sotuvdan keyingi xizmat — bu keyingi sotuvning kaliti.</p>
-  <button class="btn" onclick="window.location.href='test.html'">Testga o‘tish</button>
+  <div class="container">
+    <h1>7-bosqich: Tashrifdan keyingi monitoring</h1>
+    <img src="sv7.png" alt="Tashrifdan keyingi monitoring bosqichi rasmi">
+    <p><strong>Nima qilish kerak:</strong> Tashrifdan so‘ng mijoz bilan aloqani davom ettirish, fikrini so‘rash.</p>
+    <p><strong>Amaliy misollar:</strong></p>
+    <ul>
+      <li>“Assalomu alaykum, nasos siz kutganidek ishlayaptimi?”</li>
+      <li>“Yordam kerak bo‘lsa, bemalol murojaat qiling.”</li>
+      <li>“Mahsulot haqida fikringiz qanday?”</li>
+    </ul>
+    <p><strong>Nega bu muhim:</strong> Sotuvdan keyingi xizmat — bu keyingi sotuvning kaliti.</p>
+    <button class="btn" onclick="window.location.href='test.html'">Testga o‘tish</button>
+  </div>
+
+  <script>
+    function setVh() {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    }
+
+    window.addEventListener('resize', setVh);
+    window.addEventListener('load', () => {
+      setVh();
+      if (window.Telegram && Telegram.WebApp) {
+        Telegram.WebApp.expand();
+      }
+    });
+  </script>
 </body>
 </html>
