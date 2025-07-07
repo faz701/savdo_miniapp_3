@@ -19,41 +19,49 @@
       color: #333;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
       box-sizing: border-box;
     }
 
-    body > * {
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 30px 5%;
+      box-sizing: border-box;
+      max-width: 700px;
+      margin: 0 auto;
       width: 100%;
-      max-width: 600px;
-      padding: 0 20px;
     }
 
     h1 {
       color: #2c3e50;
-      margin-top: 30px;
+      margin-bottom: 20px;
       text-align: center;
     }
 
     img {
-      display: block;
-      margin: 20px auto;
       width: 200px;
       height: auto;
+      margin: 20px 0;
     }
 
     p {
       margin: 10px 0;
+      text-align: left;
+      width: 100%;
     }
 
     ul {
-      margin-left: 20px;
+      margin: 10px 0 20px 20px;
       padding-left: 20px;
+      text-align: left;
+      width: 100%;
     }
 
     .btn {
-      margin: 40px auto;
+      margin-top: auto;
       padding: 12px 24px;
       background-color: #2980b9;
       color: white;
@@ -61,7 +69,6 @@
       border-radius: 6px;
       font-size: 16px;
       cursor: pointer;
-      display: block;
     }
 
     .btn:hover {
@@ -70,17 +77,19 @@
   </style>
 </head>
 <body>
-  <h1>1-bosqich: Tayyorgarlik</h1>
-  <img src="sv1.png" alt="Tayyorgarlik bosqichi rasmi">
-  <p><strong>Nima qilish kerak:</strong> Tashrifdan oldin mijoz haqida ko‘proq ma’lumot to‘plash.</p>
-  <p><strong>Amaliy misollar:</strong></p>
-  <ul>
-    <li>Mijozning oldingi buyurtmalarini ko‘rib chiqish</li>
-    <li>Qaror qabul qiluvchi shaxsni aniqlash</li>
-    <li>Mahsulotlar va narxlar haqida tayyor bo‘lish</li>
-  </ul>
-  <p><strong>Nega bu muhim:</strong> Tayyorgarliksiz borgan savdo vakili — yo‘nalishsiz xarita bilan yo‘lga chiqqan sayohatchiga o‘xshaydi.</p>
-  <button class="btn" onclick="window.location.href='bosqich2.html'">Keyingi bosqich</button>
+  <div class="container">
+    <h1>1-bosqich: Tayyorgarlik</h1>
+    <img src="sv1.png" alt="Tayyorgarlik bosqichi rasmi">
+    <p><strong>Nima qilish kerak:</strong> Tashrifdan oldin mijoz haqida ko‘proq ma’lumot to‘plash.</p>
+    <p><strong>Amaliy misollar:</strong></p>
+    <ul>
+      <li>Mijozning oldingi buyurtmalarini ko‘rib chiqish</li>
+      <li>Qaror qabul qiluvchi shaxsni aniqlash</li>
+      <li>Mahsulotlar va narxlar haqida tayyor bo‘lish</li>
+    </ul>
+    <p><strong>Nega bu muhim:</strong> Tayyorgarliksiz borgan savdo vakili — yo‘nalishsiz xarita bilan yo‘lga chiqqan sayohatchiga o‘xshaydi.</p>
+    <button class="btn" onclick="window.location.href='bosqich2.html'">Keyingi bosqich</button>
+  </div>
 
   <script>
     function setVh() {
